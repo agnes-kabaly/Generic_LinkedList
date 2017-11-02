@@ -2,16 +2,7 @@ public class LinkedList<T> {
 
     private Node<T> first;
 
-    public boolean isEmpty() {
-        if (first == null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public LinkedList() {
-
     }
 
     public LinkedList(Node<T>... nodes) {
@@ -26,7 +17,15 @@ public class LinkedList<T> {
         }
     }
 
-    public void insert(Node<T> newNode) {
+    private boolean isEmpty() {
+        if (first == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void insert(Node<T> newNode) {
         if (isEmpty()) {
             newNode.next = null;
             first = newNode;
@@ -36,22 +35,27 @@ public class LinkedList<T> {
         }
     }
 
-    public void insert(T data) {
-
+    private void insert(T data) {
+        Node<T> newNode = new Node(data, null);
+        if (isEmpty()) {
+            first = newNode;
+        } else {
+            newNode.next = first;
+            first = newNode;
+        }
     }
 
+// Delete, Reverse, PrintAll...
+    /*private boolean hasLood() {
 
-}
-
-
-//List, Insert, Delete, Reverse, PrintAll...isEmpty...
-/* public boolean hasLood(Node first) {
-        Node slow;
-        Node fast;
-        slow = fast = first;
-        if (first == null) {
+        if (isEmpty()) {
             return false;
         }
+
+        Node<T> slow;
+        Node<T> fast;
+        slow = first;
+        fast = first;
 
         while (true) {
             slow = slow.next;
@@ -67,5 +71,6 @@ public class LinkedList<T> {
                 return true;
             }
         }
-    }
-*/
+    }*/
+
+}
