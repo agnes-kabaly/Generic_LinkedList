@@ -34,7 +34,7 @@ public class LinkedList<T> {
         }
     }
 
-    public Node<T> makeLoop(int index) {
+    public Node<T> getNode(int index) {
         Node<T> node = first;
         int counter = 0;
         while (node != null) {
@@ -48,6 +48,18 @@ public class LinkedList<T> {
         return null;
     }
 
+    public void remove(int index) {
+        Node<T> leftNode = first;
+        int counter = 0;
+        while (leftNode != null) {
+            if (counter == index-1) {
+                leftNode.next = leftNode.next.next;
+            }
+            counter++;
+            leftNode = leftNode.next;
+        }
+    }
+
     public void insert(T data) {
         Node<T> newNode = new Node(data, null);
         if (isEmpty()) {
@@ -57,8 +69,6 @@ public class LinkedList<T> {
             first = newNode;
         }
     }
-
-    // Delete
 
     public boolean hasLoop() {
         if (isEmpty()) {
@@ -85,8 +95,6 @@ public class LinkedList<T> {
 
         return false;
     }
-
-    // Reverse,
 
     public void printNodeList() {
         Node<T> node = first;
