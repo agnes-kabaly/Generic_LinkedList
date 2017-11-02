@@ -34,6 +34,20 @@ public class LinkedList<T> {
         }
     }
 
+    public Node<T> makeLoop(int index) {
+        Node<T> node = first;
+        int counter = 0;
+        while (node != null) {
+            if (counter == index) {
+                return node;
+            } else {
+                counter++;
+                node = node.next;
+            }
+        }
+        return null;
+    }
+
     public void insert(T data) {
         Node<T> newNode = new Node(data, null);
         if (isEmpty()) {

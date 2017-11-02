@@ -17,6 +17,11 @@ public class Main {
         System.out.println(linkedList02.hasLoop());
         linkedList02.printNodeList();
 
+        System.out.println(linkedList02.makeLoop(4));
+        linkedList02.makeLoop(4).next = linkedList02.makeLoop(1);
+        System.out.println(linkedList02.hasLoop());
+        //linkedList02.printNodeList();
+
     }
 
 
