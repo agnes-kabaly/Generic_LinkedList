@@ -8,6 +8,10 @@ public class Node<T> {
         this.next = next;
     }
 
+    public T getData() {
+        return data;
+    }
+
     @Override
     public String toString() {
         return "Node{" +
@@ -15,5 +19,6 @@ public class Node<T> {
                 ", next=" + next +
                 '}';
     }
+
 
 }
