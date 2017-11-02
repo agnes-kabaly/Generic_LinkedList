@@ -20,9 +20,27 @@ public class LinkedList<T> {
         }
     }
 
+    public LinkedList(T... values) {
+        for (T data : values) {
+            insert(data);
+        }
+    }
+
     public void insert(Node<T> newNode) {
+        if (isEmpty()) {
+            newNode.next = null;
+            first = newNode;
+        } else {
+            newNode.next = first;
+            first = newNode;
+        }
+    }
+
+    public void insert(T data) {
 
     }
+
+
 }
 
 
