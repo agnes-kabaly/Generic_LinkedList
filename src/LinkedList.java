@@ -52,7 +52,11 @@ public class LinkedList<T> {
         Node<T> leftNode = first;
         Node<T> targetNode;
         int counter = 0;
-        while (leftNode != null) {
+        while (counter != index) {
+            if (index == 0) {
+                first = first.next;
+                leftNode.next = null;
+            }
             if (counter == index-1) {
                 targetNode = leftNode.next;
                 leftNode.next = leftNode.next.next;
