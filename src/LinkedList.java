@@ -50,10 +50,13 @@ public class LinkedList<T> {
 
     public void remove(int index) {
         Node<T> leftNode = first;
+        Node<T> targetNode;
         int counter = 0;
         while (leftNode != null) {
             if (counter == index-1) {
+                targetNode = leftNode.next;
                 leftNode.next = leftNode.next.next;
+                targetNode.next = null;
             }
             counter++;
             leftNode = leftNode.next;
