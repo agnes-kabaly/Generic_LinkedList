@@ -120,5 +120,36 @@ public class LinkedList<T> {
         return items;
     }
 
+    public String stringify(LinkedList<T> linkedList) {
+        String result = "";
+        Node<T> node = first;
+        if (first == null) {
+            return "null";
+        }
+        while (node.next != null) {
+            result += node.getData() + " -> ";
+            node = node.next;
+        }
+        result += first.getData() + " -> null";
+        return result;
+    }
+
+    public String stringify(Node first) {
+        String result = "";
+        if (first == null) {
+            return "null";
+        }
+        while (first.next != null) {
+            result += first.getData() + " -> ";
+            first = first.next;
+        }
+        result += first.getData() + " -> null";
+        return result;
+    }
+
+    public Node<T> getFirst() {
+        return first;
+    }
+
 
 }

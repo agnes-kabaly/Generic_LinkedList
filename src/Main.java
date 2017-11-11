@@ -25,6 +25,8 @@ public class Main {
         linkedList02.getNode(2).next = linkedList02.getNode(1);
         System.out.println(linkedList02.hasLoop());
 
+        System.out.println(linkedList.stringify(linkedList));
+        System.out.println(linkedList.stringify(linkedList.getFirst()));
     }
 
 
