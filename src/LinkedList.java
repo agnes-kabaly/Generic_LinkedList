@@ -52,11 +52,11 @@ public class LinkedList<T> {
         Node<T> leftNode = first;
         Node<T> targetNode;
         int counter = 0;
+        if (index == 0) {
+            first = first.next;
+            leftNode.next = null;
+        }
         while (counter != index) {
-            if (index == 0) {
-                first = first.next;
-                leftNode.next = null;
-            }
             if (counter == index-1) {
                 targetNode = leftNode.next;
                 leftNode.next = leftNode.next.next;
@@ -103,20 +103,17 @@ public class LinkedList<T> {
         return false;
     }
 
-    public void printNodeList() {
-        Node<T> node = first;
-        System.out.println(node.toString());
-    }
-
     @Override
     public String toString() {
         String items = "";
         Node<T> node = first;
+        int counter = 1;
         while (node.next != null) {
-            items += "Node value: " + node.getData() + "\n";
+            items += counter + ". Node value: " + node.getData() + "\n";
             node = node.next;
+            counter++;
         }
-        items += "Node value: " + node.getData();
+        items += counter + ". Node value: " + node.getData();
         return items;
     }
 
