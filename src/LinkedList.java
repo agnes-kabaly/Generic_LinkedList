@@ -148,5 +148,19 @@ public class LinkedList<T> {
         return first;
     }
 
+    public Node reverse(Node head) {
+        Node<T> prev = null;
+        Node<T> current = head;
+        Node<T> next;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        first = prev;
+        return first;
+    }
+
 
 }

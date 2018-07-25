@@ -27,6 +27,11 @@ public class Main {
 
         System.out.println(linkedList.stringify(linkedList));
         System.out.println(linkedList.stringify(linkedList.getFirst()));
+
+        System.out.println(linkedList.getFirst());
+        System.out.println(linkedList.reverse(linkedList.getFirst()));
+        System.out.println(linkedList.getFirst());
+        System.out.println(linkedList.getNode(2));
     }
 
 
