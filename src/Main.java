@@ -30,8 +30,10 @@ public class Main {
 
         System.out.println(linkedList.getFirst());
         System.out.println(linkedList.reverse(linkedList.getFirst()));
-        System.out.println(linkedList.getFirst());
-        System.out.println(linkedList.getNode(2));
+        //System.out.println(linkedList.getFirst());
+        //System.out.println(linkedList.getNode(2));
+
+        System.out.println(linkedList.swapPairs(linkedList.getFirst()));
     }
 
 

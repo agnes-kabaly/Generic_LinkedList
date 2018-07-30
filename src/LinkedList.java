@@ -162,5 +162,26 @@ public class LinkedList<T> {
         return first;
     }
 
+    public Node swapPairs(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node prev = head;
+        Node current = head.next;
+        head = current;
+        while (true) {
+            Node next = current.next;
+            current.next = prev;
+            if (next == null || next.next == null) {
+                prev.next = next;
+                break;
+            }
+            prev.next = next.next;
+            prev = next;
+            current = prev.next;
+        }
+        return head;
+    }
+
 
 }
